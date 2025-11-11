@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="jaewonkim" created="November 10, 2025 at 8:44:29 PM EST" modified="November 10, 2025 at 10:42:14 PM EST" specVersion="9" urnVersion="1.27" nextGlobalID="324">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup7" id="7">
+      <scenarios name="ScenarioDef8" id="8"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <intElements xsi:type="fm:Feature" name="Mall Entrance" id="15" linksDest="116 117" type="Task" refs="16">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Temperature Sensor" id="25" linksSrc="116" type="Task" refs="26">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20251110-224210310"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Mall Access" id="33" linksDest="286 287" linksSrc="117" type="Task" decompositionType="Xor" refs="34">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+      <metadata name="_autoSelected" value="20251110-224210310"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Manual Revolving Doors" id="39" linksDest="314 315" linksSrc="287" type="Task" decompositionType="Xor" refs="66">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Automated Sliding Doors" id="47" linksDest="305 306" linksSrc="286" type="Task" decompositionType="Xor" refs="65">
+      <metadata name="_addAggregate" value="disable"/>
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Feature202" id="202" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Feature204" id="204" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Activate Sliding Doors" id="289" linksSrc="305" type="Task" refs="290">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Deactivate Sliding Doors" id="297" linksSrc="306" type="Task" refs="298">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Activate Revolving Doors" id="308" linksSrc="314" type="Task" refs="309">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Deactivate Revolving Doors" id="310" linksSrc="315" type="Task" refs="311">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Feature317" id="317" type="Task">
+      <metadata name="_numEval" value="0"/>
+      <metadata name="_qualEval" value="None"/>
+    </intElements>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory116" id="116" refs="//@urndef/@specDiagrams.2/@connections.0" dest="15" src="25" quantitativeContribution="50"/>
+    <links xsi:type="fm:MandatoryFMLink" name="Mandatory117" id="117" refs="//@urndef/@specDiagrams.2/@connections.1" dest="15" src="33" quantitativeContribution="50"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional286" id="286" refs="//@urndef/@specDiagrams.2/@connections.2" dest="33" src="47" quantitativeContribution="100"/>
+    <links xsi:type="fm:OptionalFMLink" name="Optional287" id="287" refs="//@urndef/@specDiagrams.2/@connections.3" dest="33" src="39" quantitativeContribution="100"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition305" id="305" refs="//@urndef/@specDiagrams.2/@connections.4" dest="47" src="289"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition306" id="306" refs="//@urndef/@specDiagrams.2/@connections.5" dest="47" src="297"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition314" id="314" refs="//@urndef/@specDiagrams.2/@connections.6" dest="39" src="308"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition315" id="315" refs="//@urndef/@specDiagrams.2/@connections.7" dest="39" src="310"/>
+    <groups name="Temperature Sensor Options" id="5" strategies="6 324"/>
+    <strategies name="Cold Weather Mode" id="6" description="Temperature sensor deactivates the sliding doors and activates the revolving doors to avoid bringing cold temperature inside." author="jaewonkim" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="33">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="47">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="297">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="39">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="308">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <strategies name="Warm Weather Mode" id="324" description="Temperature sensor deactivates the revolving doors and activates the sliding doors to allow cool air to circulate inside." author="jaewonkim" group="5">
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="47">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="289">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="39">
+        <kpiEvalValueSet/>
+      </evaluations>
+      <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="310">
+        <kpiEvalValueSet/>
+      </evaluations>
+    </strategies>
+    <impactModel/>
+    <indicatorGroup name="Time" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="10" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="11" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="12" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph2" id="2"/>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="UCMmap3" id="3"/>
+    <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram4" id="4">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef16" id="16" x="285" y="77" pred="//@urndef/@specDiagrams.2/@connections.0 //@urndef/@specDiagrams.2/@connections.1" def="15">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef26" id="26" x="165" y="185" succ="//@urndef/@specDiagrams.2/@connections.0" def="25">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef65" id="65" x="323" y="287" succ="//@urndef/@specDiagrams.2/@connections.2" pred="//@urndef/@specDiagrams.2/@connections.4 //@urndef/@specDiagrams.2/@connections.5" def="47">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef66" id="66" x="515" y="286" succ="//@urndef/@specDiagrams.2/@connections.3" pred="//@urndef/@specDiagrams.2/@connections.6 //@urndef/@specDiagrams.2/@connections.7" def="39">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef34" id="34" x="413" y="184" succ="//@urndef/@specDiagrams.2/@connections.1" pred="//@urndef/@specDiagrams.2/@connections.2 //@urndef/@specDiagrams.2/@connections.3" def="33">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef290" id="290" x="239" y="379" succ="//@urndef/@specDiagrams.2/@connections.4" def="289">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef298" id="298" x="361" y="378" succ="//@urndef/@specDiagrams.2/@connections.5" def="297">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef309" id="309" x="500" y="377" succ="//@urndef/@specDiagrams.2/@connections.6" def="308">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef311" id="311" x="623" y="376" succ="//@urndef/@specDiagrams.2/@connections.7" def="310">
+        <metadata name="_height" value="45"/>
+        <metadata name="_width" value="110"/>
+      </nodes>
+      <connections xsi:type="grl:LinkRef" source="26" target="16" link="116">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="34" target="16" link="117">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="65" target="34" link="286">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="66" target="34" link="287">
+        <label deltaX="30" deltaY="-30"/>
+      </connections>
+      <connections xsi:type="grl:LinkRef" source="290" target="65" link="305"/>
+      <connections xsi:type="grl:LinkRef" source="298" target="65" link="306"/>
+      <connections xsi:type="grl:LinkRef" source="309" target="66" link="314"/>
+      <connections xsi:type="grl:LinkRef" source="311" target="66" link="315"/>
+      <comments description="At least one door must be selected" x="521" y="145" width="126" height="42" fillColor="255,255,200"/>
+      <comments description="If both doors are chosen, the sliding door must be on the left and the revolving door must be on the right" x="532" y="196" width="144" height="64" fillColor="255,255,200"/>
+      <comments description="The temperature sensor has the ability to activate or deactivate the doors" x="27" y="211" width="142" height="56" fillColor="255,255,200"/>
+    </specDiagrams>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+  <dynamicContexts name="DynamicContext14" id="14" groups="13"/>
+  <dynamicContextGroups name="DynamicContextGroup13" id="13" contexts="14"/>
+  <timepointGroups/>
+</urn:URNspec>
