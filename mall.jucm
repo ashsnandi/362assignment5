@@ -1,65 +1,46 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="jaewonkim" created="November 12, 2025 at 8:52:31 PM EST" modified="November 12, 2025 at 9:32:08 PM EST" specVersion="28" urnVersion="1.27" nextGlobalID="649">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="jaewonkim" created="November 12, 2025, 10:33:23&#x202f;PM EST" modified="November 12, 2025, 11:49:22&#x202f;PM EST" specVersion="30" urnVersion="1.27" nextGlobalID="705">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
-      <scenarios name="ScenarioDef8" id="8"/>
+      <scenarios name="Scenario_WarmToCold" id="8">
+        <postconditions label="UpdateTempTo2" expression="currTemp = 2" description="Temperature updated by sensor"/>
+        <initializations value="0" variable="653"/>
+        <startPoints enabled="true" startPoint="584"/>
+        <endPoints enabled="true" mandatory="true" endPoint="628"/>
+      </scenarios>
+      <scenarios name="Scenario_ColdToWarm" id="655">
+        <metadata name="Traces" value="No"/>
+        <postconditions label="UpdateTempTo25" expression="currTemp = 25" description="Temperature updated by sensor"/>
+        <initializations value="0" variable="653"/>
+        <startPoints enabled="true" startPoint="584"/>
+        <endPoints enabled="true" mandatory="true" endPoint="628"/>
+      </scenarios>
     </scenarioGroups>
+    <variables name="currTemp" id="653" type="integer"/>
   </ucmspec>
   <grlspec>
-    <intElements xsi:type="fm:Feature" name="Mall Entrance" id="15" linksDest="116 117" type="Task" refs="16">
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
-    </intElements>
+    <intElements xsi:type="fm:Feature" name="Mall Entrance" id="15" linksDest="116 117" type="Task" refs="16"/>
     <intElements xsi:type="fm:Feature" name="Temperature Sensor" id="25" linksSrc="116" type="Task" refs="26">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
       <metadata name="_autoSelected" value="20251110-224210310"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Mall Access" id="33" linksDest="578 579" linksSrc="117" type="Task" decompositionType="Or" refs="34">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
       <metadata name="_autoSelected" value="20251110-224210310"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Manual Revolving Doors" id="39" linksDest="314 315" linksSrc="579" type="Task" decompositionType="Xor" refs="66">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Automated Sliding Doors" id="47" linksDest="305 306" linksSrc="578" type="Task" decompositionType="Xor" refs="65">
       <metadata name="_addAggregate" value="disable"/>
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Feature202" id="202" type="Task">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Feature204" id="204" type="Task">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Activate Sliding Doors" id="289" linksSrc="305" type="Task" refs="290">
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Deactivate Sliding Doors" id="297" linksSrc="306" type="Task" refs="298">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Activate Revolving Doors" id="308" linksSrc="314" type="Task" refs="309">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Deactivate Revolving Doors" id="310" linksSrc="315" type="Task" refs="311">
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Feature317" id="317" type="Task">
-      <metadata name="_numEval" value="0"/>
-      <metadata name="_qualEval" value="None"/>
-    </intElements>
+    <intElements xsi:type="fm:Feature" name="Feature202" id="202" type="Task"/>
+    <intElements xsi:type="fm:Feature" name="Feature204" id="204" type="Task"/>
+    <intElements xsi:type="fm:Feature" name="Activate Sliding Doors" id="289" linksSrc="305" type="Task" refs="290"/>
+    <intElements xsi:type="fm:Feature" name="Deactivate Sliding Doors" id="297" linksSrc="306" type="Task" refs="298"/>
+    <intElements xsi:type="fm:Feature" name="Activate Revolving Doors" id="308" linksSrc="314" type="Task" refs="309"/>
+    <intElements xsi:type="fm:Feature" name="Deactivate Revolving Doors" id="310" linksSrc="315" type="Task" refs="311"/>
+    <intElements xsi:type="fm:Feature" name="Feature317" id="317" type="Task"/>
     <intElements name="Use manual revolving doors" id="334" linksSrc="512 514 516 517 518 519 555 556 557 559 560 561" type="Task" refs="335"/>
     <intElements name="Use Automated Sliding Doors" id="340" linksSrc="465 488 490 492 526 527 563 565 566 567 568 569" type="Task" refs="341"/>
     <intElements name="Minimize Overall Operating Cost" id="346" linksDest="504 505 506" type="Goal" refs="347"/>
@@ -183,17 +164,17 @@
     <featureModel/>
   </grlspec>
   <urndef>
-    <responsibilities name="ReadInitialTemp" id="629" respRefs="580"/>
-    <responsibilities name="ApproachEntrance" id="630" respRefs="583"/>
-    <responsibilities name="SelectEntryDoor" id="631" respRefs="587"/>
-    <responsibilities name="ActivateSlidingDoors" id="632" respRefs="592 619"/>
-    <responsibilities name="ActivateRevolvingDoors" id="633" respRefs="597 615"/>
-    <responsibilities name="EnterMall" id="634" respRefs="602"/>
-    <responsibilities name="ReadUpdatedTemp" id="635" respRefs="606"/>
-    <responsibilities name="AdaptDoorSlection" id="636" respRefs="609"/>
-    <responsibilities name="DeactivateSlidingDoor" id="637" respRefs="613"/>
-    <responsibilities name="DeactivateRevolvingDoor" id="638" respRefs="622"/>
-    <responsibilities name="ExitMall" id="639" respRefs="627"/>
+    <responsibilities name="ReadInitialTemp" id="629" description="" expression="" respRefs="580"/>
+    <responsibilities name="ApproachEntrance" id="630" description="" expression="" respRefs="583"/>
+    <responsibilities name="SelectEntryDoor" id="631" description="" expression="" respRefs="587"/>
+    <responsibilities name="ActivateSlidingDoors" id="632" description="" expression="" respRefs="592 619"/>
+    <responsibilities name="ActivateRevolvingDoors" id="633" description="" expression="" respRefs="597 615"/>
+    <responsibilities name="EnterMall" id="634" description="" expression="" respRefs="602"/>
+    <responsibilities name="ReadUpdatedTemp" id="635" description="" expression="if (currTemp &lt; 15) {&#xA;    currTemp = 25;&#xA;} else {&#xA;    currTemp = 2;&#xA;}" respRefs="606"/>
+    <responsibilities name="AdaptDoorSlection" id="636" description="" expression="" respRefs="609"/>
+    <responsibilities name="DeactivateSlidingDoor" id="637" description="" expression="" respRefs="613"/>
+    <responsibilities name="DeactivateRevolvingDoor" id="638" description="" expression="" respRefs="622"/>
+    <responsibilities name="ExitMall" id="639" description="" expression="" respRefs="627"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="GRLGraph2" id="2">
       <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef335" id="335" x="915" y="755" succ="//@urndef/@specDiagrams.0/@connections.15 //@urndef/@specDiagrams.0/@connections.16 //@urndef/@specDiagrams.0/@connections.17 //@urndef/@specDiagrams.0/@connections.18 //@urndef/@specDiagrams.0/@connections.19 //@urndef/@specDiagrams.0/@connections.20 //@urndef/@specDiagrams.0/@connections.33 //@urndef/@specDiagrams.0/@connections.34 //@urndef/@specDiagrams.0/@connections.35 //@urndef/@specDiagrams.0/@connections.36 //@urndef/@specDiagrams.0/@connections.37 //@urndef/@specDiagrams.0/@connections.38" def="334">
         <metadata name="_width" value="148"/>
@@ -429,7 +410,7 @@
         <label deltaX="30" deltaY="-30"/>
       </connections>
     </specDiagrams>
-    <specDiagrams xsi:type="ucm.map:UCMmap" name="ColdEntry" id="3">
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="MallTraversal" id="3">
       <nodes xsi:type="ucm.map:OrFork" name="OrFork1143" id="610" x="349" y="713" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.30 //@urndef/@specDiagrams.1/@connections.19" pred="//@urndef/@specDiagrams.1/@connections.44"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1180" id="618" x="-394" y="711" succ="//@urndef/@specDiagrams.1/@connections.10" pred="//@urndef/@specDiagrams.1/@connections.17"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1169" id="600" x="-714" y="780" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.14" pred="//@urndef/@specDiagrams.1/@connections.41"/>
@@ -442,8 +423,8 @@
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1236" id="615" x="-158" y="954" contRef="643" succ="//@urndef/@specDiagrams.1/@connections.24" pred="//@urndef/@specDiagrams.1/@connections.4" respDef="633">
         <label deltaX="-2" deltaY="-41"/>
       </nodes>
-      <nodes xsi:type="ucm.map:RespRef" name="RespRef1062" id="609" x="382" y="664" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.44" pred="//@urndef/@specDiagrams.1/@connections.47" respDef="636">
-        <label deltaX="68" deltaY="-16"/>
+      <nodes xsi:type="ucm.map:RespRef" name="RespRef1062" id="609" x="376" y="645" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.44" pred="//@urndef/@specDiagrams.1/@connections.47" respDef="636">
+        <label deltaX="71" deltaY="-19"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef934" id="597" x="-160" y="1084" contRef="643" succ="//@urndef/@specDiagrams.1/@connections.23" pred="//@urndef/@specDiagrams.1/@connections.34" respDef="633">
         <label deltaX="-8" deltaY="-42"/>
@@ -457,7 +438,7 @@
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1238" id="619" x="-246" y="720" contRef="649" succ="//@urndef/@specDiagrams.1/@connections.17" pred="//@urndef/@specDiagrams.1/@connections.16" respDef="632">
         <label deltaX="-65" deltaY="-36"/>
       </nodes>
-      <nodes xsi:type="ucm.map:StartPoint" name="StartPoint563" id="584" x="-787" y="571" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.0">
+      <nodes xsi:type="ucm.map:StartPoint" name="StartPoint563" id="584" x="-787" y="571" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.0">
         <label deltaX="19" deltaY="-40"/>
         <precondition deltaX="40" deltaY="-17" label="" expression="true"/>
       </nodes>
@@ -496,7 +477,7 @@
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1163" id="593" x="-351" y="813" succ="//@urndef/@specDiagrams.1/@connections.6" pred="//@urndef/@specDiagrams.1/@connections.11"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1181" id="623" x="34" y="992" succ="//@urndef/@specDiagrams.1/@connections.5" pred="//@urndef/@specDiagrams.1/@connections.12"/>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1166" id="591" x="47" y="796" succ="//@urndef/@specDiagrams.1/@connections.13" pred="//@urndef/@specDiagrams.1/@connections.40"/>
-      <nodes xsi:type="ucm.map:EndPoint" name="EndPoint565" id="628" x="-819" y="832" contRef="641" pred="//@urndef/@specDiagrams.1/@connections.8">
+      <nodes xsi:type="ucm.map:EndPoint" name="EndPoint565" id="628" x="-819" y="832" contRef="641" pred="//@urndef/@specDiagrams.1/@connections.8" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@endPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@endPoints.0">
         <label deltaX="-48" deltaY="-16"/>
         <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
       </nodes>
@@ -546,7 +527,7 @@
       <connections xsi:type="ucm.map:NodeConnection" source="619" target="618"/>
       <connections xsi:type="ucm.map:NodeConnection" source="599" target="598"/>
       <connections xsi:type="ucm.map:NodeConnection" source="610" target="625">
-        <condition label="" expression="true"/>
+        <condition deltaX="16" deltaY="-15" label="WarmExit" expression="currTemp >= 15" description="When the updated temperature is warm (currTemp &#x2265; 15), the system turns off the revolving doors and uses sliding doors for exit"/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="603" target="604"/>
       <connections xsi:type="ucm.map:NodeConnection" source="616" target="617"/>
@@ -559,7 +540,7 @@
       <connections xsi:type="ucm.map:NodeConnection" source="607" target="608"/>
       <connections xsi:type="ucm.map:NodeConnection" source="585" target="586"/>
       <connections xsi:type="ucm.map:NodeConnection" source="610" target="611">
-        <condition label="" expression="true"/>
+        <condition deltaX="25" deltaY="30" label="ColdExit" expression="currTemp &lt; 15" description="When the updated temperature is cold (currTemp &lt; 15), the system turns off the sliding doors and uses revolving doors for exit."/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="604" target="605"/>
       <connections xsi:type="ucm.map:NodeConnection" source="601" target="602"/>
@@ -569,7 +550,7 @@
       <connections xsi:type="ucm.map:NodeConnection" source="622" target="621"/>
       <connections xsi:type="ucm.map:NodeConnection" source="583" target="582"/>
       <connections xsi:type="ucm.map:NodeConnection" source="589" target="599">
-        <condition label="" expression="true"/>
+        <condition deltaX="-18" deltaY="38" label="ColdEntry" expression="currTemp &lt; 15" description="Customer uses revolving doors to enter when the outside temperature is cold (currTemp &lt; 15)"/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="611" target="612"/>
       <connections xsi:type="ucm.map:NodeConnection" source="590" target="591"/>
@@ -578,12 +559,13 @@
       <connections xsi:type="ucm.map:NodeConnection" source="582" target="581"/>
       <connections xsi:type="ucm.map:NodeConnection" source="609" target="610"/>
       <connections xsi:type="ucm.map:NodeConnection" source="589" target="590">
-        <condition label="" expression="true"/>
+        <condition deltaX="43" deltaY="31" label="WarmEntry" expression="currTemp >= 15" description="Customer uses sliding doors to enter when the outside temperature is warm (currTemp &#x2265; 15)"/>
       </connections>
       <connections xsi:type="ucm.map:NodeConnection" source="612" target="613"/>
       <connections xsi:type="ucm.map:NodeConnection" source="608" target="609"/>
       <connections xsi:type="ucm.map:NodeConnection" source="595" target="594"/>
       <connections xsi:type="ucm.map:NodeConnection" source="613" target="614"/>
+      <comments description="Code is specified only for the responsibility &quot;ReadUpdatedTemperature&quot;       (updates currTemp based on previous temperature).&#xA;All other responsibilities are high-level actions and have no detailed code.  &#xA;" x="-20" y="368" width="155" height="138" fillColor="255,255,200"/>
     </specDiagrams>
     <specDiagrams xsi:type="fm:FeatureDiagram" name="FeatureDiagram4" id="4">
       <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef16" id="16" x="285" y="77" pred="//@urndef/@specDiagrams.2/@connections.0 //@urndef/@specDiagrams.2/@connections.1" def="15">
