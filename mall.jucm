@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="jaewonkim" created="November 12, 2025, 10:33:23&#x202f;PM EST" modified="November 13, 2025, 12:09:55&#x202f;PM EST" specVersion="38" urnVersion="1.27" nextGlobalID="708">
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fm="http:///fm.ecore" xmlns:grl="http:///grl.ecore" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="jaewonkim" created="November 12, 2025, 10:33:23&#x202f;PM EST" modified="November 13, 2025, 1:10:49&#x202f;PM EST" specVersion="44" urnVersion="1.27" nextGlobalID="709">
   <ucmspec>
     <scenarioGroups name="ScenarioGroup7" id="7">
       <scenarios name="Scenario_WarmToCold" id="8">
@@ -26,19 +26,18 @@
       <metadata name="_addAggregate" value="disable"/>
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20251113-120912068"/>
+      <metadata name="_autoSelected" value="20251113-130955620"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Mall Access" id="33" linksDest="578 579" linksSrc="117" type="Task" decompositionType="Or" refs="34">
       <metadata name="_addAggregate" value="disable"/>
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_autoSelected" value="20251113-120912068"/>
+      <metadata name="_autoSelected" value="20251113-130955620"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Manual Revolving Doors" id="39" linksDest="314 315" linksSrc="579" type="Task" decompositionType="Xor" refs="66">
       <metadata name="_addAggregate" value="disable"/>
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
-      <metadata name="_userSetEvaluationWarning" value="100 != 0"/>
     </intElements>
     <intElements xsi:type="fm:Feature" name="Automated Sliding Doors" id="47" linksDest="305 306" linksSrc="578" type="Task" decompositionType="Xor" refs="65">
       <metadata name="_addAggregate" value="disable"/>
@@ -53,19 +52,19 @@
       <metadata name="_numEval" value="0"/>
       <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Activate Sliding Doors" id="289" linksSrc="305" type="Task" refs="290">
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Deactivate Sliding Doors" id="297" linksSrc="306" type="Task" refs="298">
-      <metadata name="_numEval" value="100"/>
-      <metadata name="_qualEval" value="Satisfied"/>
-    </intElements>
-    <intElements xsi:type="fm:Feature" name="Activate Revolving Doors" id="308" linksSrc="314" type="Task" refs="309">
+    <intElements xsi:type="fm:Feature" name="Activate Sliding Doors" fromLinks="//@urnLinks.3" id="289" linksSrc="305" type="Task" refs="290 341">
       <metadata name="_numEval" value="0"/>
       <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements xsi:type="fm:Feature" name="Deactivate Revolving Doors" id="310" linksSrc="315" type="Task" refs="311">
+    <intElements xsi:type="fm:Feature" name="Deactivate Sliding Doors" fromLinks="//@urnLinks.2" id="297" linksSrc="306" type="Task" refs="298">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Activate Revolving Doors" fromLinks="//@urnLinks.0" id="308" linksSrc="314" type="Task" refs="309 335">
+      <metadata name="_numEval" value="100"/>
+      <metadata name="_qualEval" value="Satisfied"/>
+    </intElements>
+    <intElements xsi:type="fm:Feature" name="Deactivate Revolving Doors" fromLinks="//@urnLinks.1" id="310" linksSrc="315" type="Task" refs="311">
       <metadata name="_numEval" value="0"/>
       <metadata name="_qualEval" value="None"/>
     </intElements>
@@ -73,12 +72,12 @@
       <metadata name="_numEval" value="0"/>
       <metadata name="_qualEval" value="None"/>
     </intElements>
-    <intElements name="Manual Doors active, automatic deactive" id="334" linksSrc="512 514 516 517 518 519 555 556 557 559 560 561" type="Task" importance="High" importanceQuantitative="100" refs="335">
+    <intElements name="Manual Doors active, automatic deactive" id="334" linksSrc="512 514 516 517 518 519 555 556 557 559 560 561" type="Task" importance="High" importanceQuantitative="100">
       <metadata name="_addAggregate" value="disable"/>
       <metadata name="_numEval" value="100"/>
       <metadata name="_qualEval" value="Satisfied"/>
     </intElements>
-    <intElements name="Automated doors active, manual deactive" id="340" linksSrc="465 488 490 492 526 527 563 565 566 567 568 569" type="Task" refs="341">
+    <intElements name="Automated doors active, manual deactive" id="340" linksSrc="465 488 490 492 526 527 563 565 566 567 568 569" type="Task">
       <metadata name="_addAggregate" value="disable"/>
       <metadata name="_numEval" value="0"/>
       <metadata name="_qualEval" value="None"/>
@@ -177,9 +176,8 @@
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory116" id="116" refs="//@urndef/@specDiagrams.2/@connections.0" dest="15" src="25" quantitativeContribution="50"/>
     <links xsi:type="fm:MandatoryFMLink" name="Mandatory117" id="117" refs="//@urndef/@specDiagrams.2/@connections.1" dest="15" src="33" quantitativeContribution="50"/>
     <links xsi:type="grl:Decomposition" name="Decomposition305" id="305" refs="//@urndef/@specDiagrams.2/@connections.2" dest="47" src="289"/>
-    <links xsi:type="grl:Decomposition" name="Decomposition306" id="306" refs="//@urndef/@specDiagrams.2/@connections.3" dest="47" src="297"/>
-    <links xsi:type="grl:Decomposition" name="Decomposition314" id="314" refs="//@urndef/@specDiagrams.2/@connections.4" dest="39" src="308"/>
-    <links xsi:type="grl:Decomposition" name="Decomposition315" id="315" refs="//@urndef/@specDiagrams.2/@connections.5" dest="39" src="310"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition314" id="314" refs="//@urndef/@specDiagrams.2/@connections.3" dest="39" src="308"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition315" id="315" refs="//@urndef/@specDiagrams.2/@connections.4" dest="39" src="310"/>
     <links xsi:type="grl:Contribution" name="Contribution456" id="456" refs="//@urndef/@specDiagrams.0/@connections.0" dest="386" src="450" contribution="SomePositive" quantitativeContribution="50"/>
     <links xsi:type="grl:Contribution" name="Contribution465" id="465" refs="//@urndef/@specDiagrams.0/@connections.1" dest="431" src="340" contribution="SomeNegative" quantitativeContribution="-50"/>
     <links xsi:type="grl:Contribution" name="Contribution484" id="484" refs="//@urndef/@specDiagrams.0/@connections.2" dest="472" src="478" contribution="SomePositive" quantitativeContribution="75"/>
@@ -220,8 +218,9 @@
     <links xsi:type="grl:Contribution" name="Contribution567" id="567" refs="//@urndef/@specDiagrams.0/@connections.37" dest="438" src="340"/>
     <links xsi:type="grl:Contribution" name="Contribution568" id="568" refs="//@urndef/@specDiagrams.0/@connections.38" dest="354" src="340" contribution="SomePositive" quantitativeContribution="75"/>
     <links xsi:type="grl:Contribution" name="Contribution569" id="569" refs="//@urndef/@specDiagrams.0/@connections.39" dest="362" src="340" contribution="SomePositive" quantitativeContribution="50"/>
-    <links xsi:type="grl:Decomposition" name="Decomposition578" id="578" refs="//@urndef/@specDiagrams.2/@connections.6" dest="33" src="47"/>
-    <links xsi:type="grl:Decomposition" name="Decomposition579" id="579" refs="//@urndef/@specDiagrams.2/@connections.7" dest="33" src="39"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition578" id="578" refs="//@urndef/@specDiagrams.2/@connections.5" dest="33" src="47"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition579" id="579" refs="//@urndef/@specDiagrams.2/@connections.6" dest="33" src="39"/>
+    <links xsi:type="grl:Decomposition" name="Decomposition306" id="306" refs="//@urndef/@specDiagrams.2/@connections.7" dest="47" src="297"/>
     <groups name="Temperature Sensor Options" id="5" strategies="6 324"/>
     <strategies name="Cold Weather Mode" id="6" description="Temperature sensor deactivates the sliding doors and activates the revolving doors to avoid bringing cold temperature inside." author="jaewonkim" group="5">
       <evaluations evaluation="100" qualitativeEvaluation="Satisfied" intElement="33">
@@ -271,20 +270,20 @@
     <responsibilities name="ReadInitialTemp" id="629" description="" expression="" respRefs="580"/>
     <responsibilities name="ApproachEntrance" id="630" description="" expression="" respRefs="583"/>
     <responsibilities name="SelectEntryDoor" id="631" description="" expression="" respRefs="587"/>
-    <responsibilities name="ActivateSlidingDoors" id="632" description="" expression="_GRL_Activate_Sliding_Doors=100;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" respRefs="592 619"/>
-    <responsibilities name="ActivateRevolvingDoors" id="633" description="" expression="_GRL_Activate_Revolving_Doors=100;&#xD;&#xA;" respRefs="597 615"/>
+    <responsibilities name="ActivateSlidingDoors" id="632" description="" expression="if (_GRL_Deactivate_Sliding_Doors == 100){&#xD;&#xA;&#x9;_GRL_Activate_Sliding_Doors=100;&#xD;&#xA;&#x9;_GRL_Deactivate_Sliding_Doors=0;&#xD;&#xA;}" respRefs="592 619"/>
+    <responsibilities name="ActivateRevolvingDoors" toLinks="//@urnLinks.0" id="633" description="" expression="if (_GRL_Deactivate_Revolving_Doors==100){&#xD;&#xA;&#x9;_GRL_Deactivate_Revolving_Doors=0;&#xD;&#xA;&#x9;_GRL_Activate_Revolving_Doors=100;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" respRefs="597 615"/>
     <responsibilities name="EnterMall" id="634" description="" expression="" respRefs="602"/>
     <responsibilities name="ReadUpdatedTemp" id="635" description="" expression="if (currTemp &lt; 15) {&#xA;    currTemp = 25;&#xA;} else {&#xA;    currTemp = 2;&#xA;}" respRefs="606"/>
     <responsibilities name="AdaptDoorSlection" id="636" description="" expression="" respRefs="609"/>
-    <responsibilities name="DeactivateSlidingDoor" id="637" description="" expression="_GRL_Activate_Sliding_Doors=0;&#xD;&#xA;" respRefs="613"/>
-    <responsibilities name="DeactivateRevolvingDoor" id="638" description="" expression="_GRL_Activate_Revolving_Doors=0;&#xD;&#xA;" respRefs="622"/>
+    <responsibilities name="DeactivateSlidingDoor" id="637" description="" expression="if (_GRL_Activate_Sliding_Doors == 100){&#xD;&#xA;&#x9;_GRL_Deactivate_Sliding_Doors=100;&#xD;&#xA;&#x9;_GRL_Activate_Sliding_Doors=0;&#xD;&#xA;}" respRefs="613"/>
+    <responsibilities name="DeactivateRevolvingDoor" toLinks="//@urnLinks.1" id="638" description="" expression="if (_GRL_Activate_Revolving_Doors==100){&#xD;&#xA;&#x9;_GRL_Activate_Revolving_Doors=0;&#xD;&#xA;&#x9;_GRL_Deactivate_Revolving_Doors=100;&#xD;&#xA;}" respRefs="622"/>
     <responsibilities name="ExitMall" id="639" description="" expression="" respRefs="627"/>
     <specDiagrams xsi:type="grl:GRLGraph" name="Goal Model" id="2">
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef335" id="335" x="915" y="755" succ="//@urndef/@specDiagrams.0/@connections.10 //@urndef/@specDiagrams.0/@connections.11 //@urndef/@specDiagrams.0/@connections.12 //@urndef/@specDiagrams.0/@connections.13 //@urndef/@specDiagrams.0/@connections.14 //@urndef/@specDiagrams.0/@connections.15 //@urndef/@specDiagrams.0/@connections.28 //@urndef/@specDiagrams.0/@connections.29 //@urndef/@specDiagrams.0/@connections.30 //@urndef/@specDiagrams.0/@connections.31 //@urndef/@specDiagrams.0/@connections.32 //@urndef/@specDiagrams.0/@connections.33" def="334">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef335" id="335" x="915" y="755" succ="//@urndef/@specDiagrams.0/@connections.10 //@urndef/@specDiagrams.0/@connections.11 //@urndef/@specDiagrams.0/@connections.12 //@urndef/@specDiagrams.0/@connections.13 //@urndef/@specDiagrams.0/@connections.14 //@urndef/@specDiagrams.0/@connections.15 //@urndef/@specDiagrams.0/@connections.28 //@urndef/@specDiagrams.0/@connections.29 //@urndef/@specDiagrams.0/@connections.30 //@urndef/@specDiagrams.0/@connections.31 //@urndef/@specDiagrams.0/@connections.32 //@urndef/@specDiagrams.0/@connections.33" def="308">
         <metadata name="_width" value="148"/>
         <metadata name="_height" value="64"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef341" id="341" x="540" y="787" succ="//@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.4 //@urndef/@specDiagrams.0/@connections.5 //@urndef/@specDiagrams.0/@connections.6 //@urndef/@specDiagrams.0/@connections.18 //@urndef/@specDiagrams.0/@connections.19 //@urndef/@specDiagrams.0/@connections.34 //@urndef/@specDiagrams.0/@connections.35 //@urndef/@specDiagrams.0/@connections.36 //@urndef/@specDiagrams.0/@connections.37 //@urndef/@specDiagrams.0/@connections.38 //@urndef/@specDiagrams.0/@connections.39" def="340">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef341" id="341" x="540" y="787" succ="//@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.4 //@urndef/@specDiagrams.0/@connections.5 //@urndef/@specDiagrams.0/@connections.6 //@urndef/@specDiagrams.0/@connections.18 //@urndef/@specDiagrams.0/@connections.19 //@urndef/@specDiagrams.0/@connections.34 //@urndef/@specDiagrams.0/@connections.35 //@urndef/@specDiagrams.0/@connections.36 //@urndef/@specDiagrams.0/@connections.37 //@urndef/@specDiagrams.0/@connections.38 //@urndef/@specDiagrams.0/@connections.39" def="289">
         <metadata name="_height" value="62"/>
         <metadata name="_width" value="131"/>
       </nodes>
@@ -477,15 +476,15 @@
         <label deltaX="30" deltaY="-30"/>
       </connections>
       <comments description="Some acessibility could be maintained if there were a push to open button for example&#xD;&#xA;" x="1156" y="734" width="176" height="100" fillColor="255,255,200"/>
-      <comments description="The customer prefers the warm weather mode or the ony automated doors being activated - this is because the warmth is negligble compared to accessibility needs and the convenience of automatic doors. The overall ability of quicker traffic flow also greatly aids to be a better experience&#xD;&#xA;&#xD;&#xA;" x="673" y="-207" width="284" height="159" fillColor="255,255,200"/>
-      <comments description="The executives prefer the manual doors as even though it makes a good impact on customer experience, the overall maintenance costs and steady add to electricity cost overtime begin to outweigh the customer satisfaction (which is lower ranked for the executive than cost)&#xD;&#xA;" x="1633" y="-212" width="317" height="136" fillColor="255,255,200"/>
+      <comments description="The customer prefers the automatic door being activated&#xD;&#xA; - this is because the warmth is negligble compared to accessibility needs and the convenience of automatic doors. The overall ability of quicker traffic flow also greatly aids to be a better experience&#xD;&#xA;&#xD;&#xA;" x="673" y="-207" width="284" height="159" fillColor="255,255,200"/>
+      <comments description="The executives prefer the revolving door &#xD;&#xA;as even though it makes a good impact on customer experience, the overall maintenance costs and steady add to electricity cost overtime begin to outweigh the customer satisfaction (which is lower ranked for the executive than cost)&#xD;&#xA;" x="1633" y="-212" width="317" height="136" fillColor="255,255,200"/>
     </specDiagrams>
-    <specDiagrams xsi:type="ucm.map:UCMmap" name="MallTraversal" id="3">
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="MallTraversal" toLinks="//@urnLinks.2 //@urnLinks.3" id="3">
       <nodes xsi:type="ucm.map:OrFork" name="OrFork1143" id="610" x="349" y="713" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.30 //@urndef/@specDiagrams.1/@connections.19" pred="//@urndef/@specDiagrams.1/@connections.44">
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1180" id="618" x="-394" y="711" succ="//@urndef/@specDiagrams.1/@connections.10" pred="//@urndef/@specDiagrams.1/@connections.17">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1169" id="600" x="-714" y="780" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.14" pred="//@urndef/@specDiagrams.1/@connections.41">
         <metadata name="_hits" value="1"/>
@@ -498,13 +497,13 @@
         <label deltaX="4" deltaY="14"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1235" id="614" x="-85" y="873" succ="//@urndef/@specDiagrams.1/@connections.4" pred="//@urndef/@specDiagrams.1/@connections.49">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrFork" name="OrFork932" id="589" x="369" y="819" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.45 //@urndef/@specDiagrams.1/@connections.38" pred="//@urndef/@specDiagrams.1/@connections.7">
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1236" id="615" x="-158" y="954" contRef="643" succ="//@urndef/@specDiagrams.1/@connections.24" pred="//@urndef/@specDiagrams.1/@connections.4" respDef="633">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
         <label deltaX="-2" deltaY="-41"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1062" id="609" x="376" y="645" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.44" pred="//@urndef/@specDiagrams.1/@connections.47" respDef="636">
@@ -512,11 +511,11 @@
         <label deltaX="71" deltaY="-19"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef934" id="597" x="-160" y="1084" contRef="643" succ="//@urndef/@specDiagrams.1/@connections.23" pred="//@urndef/@specDiagrams.1/@connections.34" respDef="633">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-8" deltaY="-42"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1244" id="620" x="-329" y="879" succ="//@urndef/@specDiagrams.1/@connections.16" pred="//@urndef/@specDiagrams.1/@connections.2">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1172" id="605" x="-383" y="608" succ="//@urndef/@specDiagrams.1/@connections.27" pred="//@urndef/@specDiagrams.1/@connections.31">
         <metadata name="_hits" value="1"/>
@@ -534,7 +533,7 @@
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1238" id="619" x="-246" y="720" contRef="649" succ="//@urndef/@specDiagrams.1/@connections.17" pred="//@urndef/@specDiagrams.1/@connections.16" respDef="632">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="-65" deltaY="-36"/>
       </nodes>
       <nodes xsi:type="ucm.map:StartPoint" name="StartPoint563" id="584" x="-787" y="571" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.0" scenarioStartPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@startPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@startPoints.0">
@@ -547,17 +546,17 @@
         <label deltaX="7" deltaY="19"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1161" id="596" x="-428" y="1078" succ="//@urndef/@specDiagrams.1/@connections.22" pred="//@urndef/@specDiagrams.1/@connections.23">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1176" id="611" x="229" y="698" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.39" pred="//@urndef/@specDiagrams.1/@connections.30">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef803" id="592" x="-172" y="800" contRef="649" succ="//@urndef/@specDiagrams.1/@connections.11" pred="//@urndef/@specDiagrams.1/@connections.13" respDef="632">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
         <label deltaX="7" deltaY="6"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1157" id="599" x="318" y="934" succ="//@urndef/@specDiagrams.1/@connections.18" pred="//@urndef/@specDiagrams.1/@connections.38">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1064" id="606" x="-165" y="558" contRef="645" succ="//@urndef/@specDiagrams.1/@connections.33" pred="//@urndef/@specDiagrams.1/@connections.27" respDef="635">
         <metadata name="_hits" value="1"/>
@@ -567,22 +566,22 @@
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1198" id="616" x="-386" y="877" succ="//@urndef/@specDiagrams.1/@connections.21" pred="//@urndef/@specDiagrams.1/@connections.24">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1185" id="625" x="251" y="758" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.42" pred="//@urndef/@specDiagrams.1/@connections.19">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1174" id="607" x="-38" y="591" succ="//@urndef/@specDiagrams.1/@connections.28" pred="//@urndef/@specDiagrams.1/@connections.33">
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1177" id="612" x="28" y="680" succ="//@urndef/@specDiagrams.1/@connections.46" pred="//@urndef/@specDiagrams.1/@connections.39">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1165" id="590" x="245" y="802" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.40" pred="//@urndef/@specDiagrams.1/@connections.45">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1188" id="622" x="-158" y="1009" contRef="643" succ="//@urndef/@specDiagrams.1/@connections.36" pred="//@urndef/@specDiagrams.1/@connections.5" respDef="638">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
         <label deltaX="5" deltaY="-45"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1146" id="581" x="-356" y="542" succ="//@urndef/@specDiagrams.1/@connections.35" pred="//@urndef/@specDiagrams.1/@connections.43">
@@ -599,23 +598,23 @@
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1159" id="598" x="88" y="1053" succ="//@urndef/@specDiagrams.1/@connections.34" pred="//@urndef/@specDiagrams.1/@connections.18">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef594" id="602" x="-752" y="652" contRef="641" succ="//@urndef/@specDiagrams.1/@connections.26" pred="//@urndef/@specDiagrams.1/@connections.32" respDef="634">
         <metadata name="_hits" value="1"/>
         <label deltaX="59" deltaY="-20"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1244" id="621" x="-353" y="975" succ="//@urndef/@specDiagrams.1/@connections.2" pred="//@urndef/@specDiagrams.1/@connections.36">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1163" id="593" x="-351" y="813" succ="//@urndef/@specDiagrams.1/@connections.6" pred="//@urndef/@specDiagrams.1/@connections.11">
-        <metadata name="_hits" value="0"/>
-      </nodes>
-      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1181" id="623" x="34" y="992" succ="//@urndef/@specDiagrams.1/@connections.5" pred="//@urndef/@specDiagrams.1/@connections.12">
         <metadata name="_hits" value="1"/>
       </nodes>
-      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1166" id="591" x="47" y="796" succ="//@urndef/@specDiagrams.1/@connections.13" pred="//@urndef/@specDiagrams.1/@connections.40">
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1181" id="623" x="34" y="992" succ="//@urndef/@specDiagrams.1/@connections.5" pred="//@urndef/@specDiagrams.1/@connections.12">
         <metadata name="_hits" value="0"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1166" id="591" x="47" y="796" succ="//@urndef/@specDiagrams.1/@connections.13" pred="//@urndef/@specDiagrams.1/@connections.40">
+        <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:EndPoint" name="EndPoint565" id="628" x="-819" y="832" contRef="641" pred="//@urndef/@specDiagrams.1/@connections.8" scenarioEndPoints="//@ucmspec/@scenarioGroups.0/@scenarios.0/@endPoints.0 //@ucmspec/@scenarioGroups.0/@scenarios.1/@endPoints.0">
         <metadata name="_hits" value="1"/>
@@ -623,17 +622,17 @@
         <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1182" id="624" x="100" y="867" succ="//@urndef/@specDiagrams.1/@connections.12" pred="//@urndef/@specDiagrams.1/@connections.42">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1155" id="588" x="412" y="730" contRef="647" succ="//@urndef/@specDiagrams.1/@connections.7" pred="//@urndef/@specDiagrams.1/@connections.3">
         <metadata name="_hits" value="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:RespRef" name="RespRef1066" id="613" x="-84" y="690" contRef="649" succ="//@urndef/@specDiagrams.1/@connections.49" pred="//@urndef/@specDiagrams.1/@connections.46" respDef="637">
-        <metadata name="_hits" value="0"/>
+        <metadata name="_hits" value="1"/>
         <label deltaX="58" deltaY="1"/>
       </nodes>
       <nodes xsi:type="ucm.map:DirectionArrow" name="DirectionArrow1162" id="595" x="-615" y="1077" succ="//@urndef/@specDiagrams.1/@connections.48" pred="//@urndef/@specDiagrams.1/@connections.22">
-        <metadata name="_hits" value="1"/>
+        <metadata name="_hits" value="0"/>
       </nodes>
       <nodes xsi:type="ucm.map:OrJoin" name="OrJoin1232" id="617" x="-469" y="719" succ="//@urndef/@specDiagrams.1/@connections.25" pred="//@urndef/@specDiagrams.1/@connections.21 //@urndef/@specDiagrams.1/@connections.10">
         <metadata name="_hits" value="1"/>
@@ -729,15 +728,15 @@
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef65" id="65" x="323" y="287" succ="//@urndef/@specDiagrams.2/@connections.6" pred="//@urndef/@specDiagrams.2/@connections.2 //@urndef/@specDiagrams.2/@connections.3" def="47">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef65" id="65" x="323" y="287" succ="//@urndef/@specDiagrams.2/@connections.5" pred="//@urndef/@specDiagrams.2/@connections.2 //@urndef/@specDiagrams.2/@connections.7" def="47">
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef66" id="66" x="515" y="286" succ="//@urndef/@specDiagrams.2/@connections.7" pred="//@urndef/@specDiagrams.2/@connections.4 //@urndef/@specDiagrams.2/@connections.5" def="39">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef66" id="66" x="515" y="286" succ="//@urndef/@specDiagrams.2/@connections.6" pred="//@urndef/@specDiagrams.2/@connections.3 //@urndef/@specDiagrams.2/@connections.4" def="39">
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef34" id="34" x="413" y="184" succ="//@urndef/@specDiagrams.2/@connections.1" pred="//@urndef/@specDiagrams.2/@connections.6 //@urndef/@specDiagrams.2/@connections.7" def="33">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef34" id="34" x="413" y="184" succ="//@urndef/@specDiagrams.2/@connections.1" pred="//@urndef/@specDiagrams.2/@connections.5 //@urndef/@specDiagrams.2/@connections.6" def="33">
         <metadata name="_height" value="45"/>
         <metadata name="_width" value="110"/>
       </nodes>
@@ -745,15 +744,15 @@
         <metadata name="_height" value="65"/>
         <metadata name="_width" value="113"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef298" id="298" x="361" y="378" succ="//@urndef/@specDiagrams.2/@connections.3" def="297">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef298" id="298" x="361" y="378" succ="//@urndef/@specDiagrams.2/@connections.7" def="297">
         <metadata name="_height" value="59"/>
         <metadata name="_width" value="113"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef309" id="309" x="500" y="377" succ="//@urndef/@specDiagrams.2/@connections.4" def="308">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef309" id="309" x="500" y="377" succ="//@urndef/@specDiagrams.2/@connections.3" def="308">
         <metadata name="_height" value="67"/>
         <metadata name="_width" value="110"/>
       </nodes>
-      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef311" id="311" x="623" y="376" succ="//@urndef/@specDiagrams.2/@connections.5" def="310">
+      <nodes xsi:type="grl:IntentionalElementRef" name="IntentionalElementRef311" id="311" x="623" y="376" succ="//@urndef/@specDiagrams.2/@connections.4" def="310">
         <metadata name="_height" value="74"/>
         <metadata name="_width" value="112"/>
       </nodes>
@@ -764,11 +763,11 @@
         <label deltaX="30" deltaY="-30"/>
       </connections>
       <connections xsi:type="grl:LinkRef" source="290" target="65" link="305"/>
-      <connections xsi:type="grl:LinkRef" source="298" target="65" link="306"/>
       <connections xsi:type="grl:LinkRef" source="309" target="66" link="314"/>
       <connections xsi:type="grl:LinkRef" source="311" target="66" link="315"/>
       <connections xsi:type="grl:LinkRef" source="65" target="34" link="578"/>
       <connections xsi:type="grl:LinkRef" source="66" target="34" link="579"/>
+      <connections xsi:type="grl:LinkRef" source="298" target="65" link="306"/>
       <comments description="At least one door must be selected" x="521" y="145" width="126" height="42" fillColor="255,255,200"/>
       <comments description="If both doors are chosen, the sliding door must be on the left and the revolving door must be on the right" x="532" y="196" width="144" height="64" fillColor="255,255,200"/>
       <comments description="The temperature sensor has the ability to activate or deactivate the doors" x="27" y="211" width="147" height="103" fillColor="255,255,200"/>
@@ -779,7 +778,13 @@
     <components name="EntranceController" id="646" contRefs="647" kind="Process"/>
     <components name="SlidingDoor" id="648" contRefs="649" kind="Object"/>
   </urndef>
+  <urnLinks type="Open Door" fromElem="308" toElem="633"/>
+  <urnLinks type="Deactivate Door" fromElem="310" toElem="638"/>
+  <urnLinks type="Deactivate Door" fromElem="297" toElem="3"/>
+  <urnLinks type="Open Door" fromElem="289" toElem="3"/>
   <metadata name="_Use0to100EvaluationRange" value="false"/>
+  <metadata name="UrnLinkType" value="Open Door"/>
+  <metadata name="UrnLinkType" value="Deactivate Door"/>
   <dynamicContexts name="DynamicContext14" id="14" groups="13"/>
   <dynamicContextGroups name="DynamicContextGroup13" id="13" contexts="14"/>
   <timepointGroups/>
